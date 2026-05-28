@@ -1,13 +1,13 @@
 from fastapi import FastAPI
-from schemas.disco import DiscoCreate
+from schemas.album_schema import AlbumCreate
 
 app = FastAPI()
 
 
 @app.get("/")
 def root():
-    return {"mensaje": "API tienda de musica"}
+    return {"mensaje": "Welcome to Musintage"}
 
-@app.post("/discos")
-def crear_disco(disco: DiscoCreate):
-    return disco
+@app.post("/albums")
+def create_album(album: AlbumCreate):
+    return album
