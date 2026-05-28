@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"mensaje": "API tienda de musica"}
+    return {"mensaje": "Welcome to Musintage"}
 
 @app.post("/album")
 def crear_album(album: AlbumCreate):

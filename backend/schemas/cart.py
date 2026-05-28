@@ -1,0 +1,18 @@
+from pydantic import BaseModel
+
+
+class CartItemBase(BaseModel):
+    album_id: int
+    quantity: int
+
+
+class CartItemCreate(CartItemBase):
+    pass
+
+
+class CartItemResponse(CartItemBase):
+    id: int
+    user_id: int
+
+    class Config:
+        from_attributes = True
