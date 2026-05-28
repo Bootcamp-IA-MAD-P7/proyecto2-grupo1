@@ -58,7 +58,8 @@ Para encender el servidor de desarrollo en tiempo real con recarga automática (
 
 uvicorn main:app --reload
 
-El servicio se desplegará de forma local en: 🔗 http://127.0.0.1:8000
+El servicio se desplegará de forma local en:
+ 🔗 http://127.0.0.1:8000
 
 📂 Documentación Interactiva (Swagger UI)
 FastAPI genera automáticamente una interfaz gráfica interactiva para testear y revisar todos los endpoints en tiempo real. Puedes acceder desde el navegador en:
