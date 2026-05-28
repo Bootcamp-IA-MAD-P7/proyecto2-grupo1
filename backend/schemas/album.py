@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 
-class DiscoBase(BaseModel):
+class Base(BaseModel):
     titulo: str
     artista: str
     genero: str
@@ -13,11 +13,11 @@ class DiscoBase(BaseModel):
     imagen_url: Optional[str] = None
 
 
-class DiscoCreate(DiscoBase):
+class AlbumCreate(Base):
     categoria_id: int
 
 
-class DiscoUpdate(BaseModel):
+class AlbumUpdate(BaseModel):
     titulo: Optional[str] = None
     artista: Optional[str] = None
     genero: Optional[str] = None
@@ -28,7 +28,7 @@ class DiscoUpdate(BaseModel):
     imagen_url: Optional[str] = None
 
 
-class DiscoResponse(DiscoBase):
+class AlbumResponse(Base):
     id: int
     categoria_id: int
 
