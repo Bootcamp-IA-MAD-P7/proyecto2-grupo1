@@ -1,5 +1,8 @@
 from fastapi import FastAPI
-from schemas.album_schema import AlbumCreate
+from schemas.album import AlbumCreate
+from database import database
+
+
 
 app = FastAPI()
 
@@ -8,6 +11,18 @@ app = FastAPI()
 def root():
     return {"mensaje": "Welcome to Musintage"}
 
-@app.post("/albums")
-def create_album(album: AlbumCreate):
-    return album
+@app.post("/album")
+def crear_album(album: AlbumCreate):
+    return album 
+
+
+
+#IMPORTANTE: Aquí referenciamos el archivo "database" no la variable "db"
+
+
+def run():
+    pass
+if __name__ == '__main__':
+    database.Base.metadata.create_all(database.engine)
+    run()
+
