@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from schemas.album import AlbumCreate
-from routes import router
+from backend.routes.routes import router
 
 app = FastAPI()
 
