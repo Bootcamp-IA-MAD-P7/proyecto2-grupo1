@@ -1,73 +1,82 @@
-from pymysql import Timestamp
-from sqlalchemy import Column, Date, Float, Integer, String, Numeric, Text
+# models/musintage_models.py
+
+from sqlalchemy import Column, Date, Integer, String, Numeric, Text, ForeignKey
 from database.database import Base
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 class Album(Base):
     __tablename__ = "album"
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(45), nullable=False, index=True)
-    artist_id = Column(String(45), foreign_key = "artist.id", nullable=False, index=True)
-    genre_id = Column(String(45), foreign_key = "genre.id", index=True)
-    price = Column(Float(10, 2), nullable=False, default=0.0)
+    artist_id = Column(Integer, ForeignKey("artist.id"), nullable=False, index=True)
+    genre_id = Column(Integer, ForeignKey("genre.id"), index=True)
+    price = Column(Numeric(10, 2), nullable=False, default=0.0)
     stock = Column(Integer, nullable=False, default=0)
     year = Column(Integer, nullable=True)
-    format = Column(String(50), index=True)
+    format_type = Column(String(50), index=True)
     image_url = Column(Text(500), nullable=True)
-
+    
+    # Relaciones
+    artist = relationship("Artist", back_populates="albums")
+    genre = relationship("Genre", back_populates="albums")
 
 class Artist(Base):
     __tablename__ = "artist"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(45), nullable=False, index=True)
-    biography = Column(Text(500), index=True)
-    nationality = Column(String(45), nullable=False, default=0.0)
-    created_at = Column(Timestamp, nullable=False, default=0)
+    nationality = Column(String(45), nullable=False)
+    
+    # Relación
+    albums = relationship("Album", back_populates="artist")
 
 class Genre(Base):
     __tablename__ = "genre"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(45), nullable=False, unique = True, index=True)
+    name = Column(String(45), nullable=False, unique=True, index=True)
     
-class Product_inventory(Base):
-    __tablename__ = "product_inventory"
+    # Relación
+    albums = relationship("Album", back_populates="genre")
+    
+#### Tabla User ####
 
-    id = Column(Integer, primary_key=True, index=True)
-    album_id = Column(Integer, foreign_key="album.id", nullable=False)
-    format_type = Column(String(50), nullable=False, index=True)
-    barcode = Column(String(45), index=True)
-    price = Column(Float(10, 2), nullable=False, default=0.0)
-    stock = Column(Integer, nullable=False, default=0)
-    
-    
 class User(Base):
     __tablename__ = "user"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(45), nullable=False, index=True)
-    email = Column(String(45), nullable=False, index=True)
-    password_hash = Column(String(45), nullable=False)
+    email = Column(String(45), nullable=False, unique=True, index=True)
+    password_hash = Column(String(255), nullable=False)  # Aumentado para hash seguro
     role = Column(String(20), default="customer")
+    
+    # Relaciones
+    orders = relationship("Order", back_populates="user")
 
-class Orders(Base):
+class Order(Base):  # Cambiado de Orders a Order (mejor práctica)
     __tablename__ = "orders"
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, foreign_key = 'user.id', nullable=False)
-    album_id = Column(Integer, foreign_key = 'album.id', nullable=False)
-    quantity = Column(Integer, nullable=False, default=1)
-    total_price = Column(Float,(10, 2), nullable=False, default=0.0)
-    order_date = Column(Date, nullable=False, default=0)
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False)
+    order_date = Column(Date, nullable=False, default=func.current_date())
     order_status = Column(String(20), default="pending")
+    total_amount = Column(Numeric(10, 2), nullable=False, default=0.0)
     
-class order_details(Base):
+    # Relaciones
+    user = relationship("User", back_populates="orders")
+    details = relationship("OrderDetail", back_populates="order", cascade="all, delete-orphan")
+
+class OrderDetail(Base):  # Cambiado de order_details a OrderDetail (mejor práctica)
     __tablename__ = "order_details"
 
     id = Column(Integer, primary_key=True, index=True)
-    order_id = Column(Integer, foreign_key = 'orders.id', nullable=False)
-    album_id = Column(Integer, foreign_key = 'album.id', nullable=False)
+    order_id = Column(Integer, ForeignKey("orders.id", ondelete="CASCADE"), nullable=False)
+    album_id = Column(Integer, ForeignKey("album.id"), nullable=False)
     quantity = Column(Integer, nullable=False, default=1)
-    price = Column(Float(10, 2), nullable=False, default=0.0)
-
+    unit_price = Column(Numeric(10, 2), nullable=False, default=0.0)
+    
+    # Relaciones
+    order = relationship("Order", back_populates="details")
+    album = relationship("Album")  # Relación con Album existente

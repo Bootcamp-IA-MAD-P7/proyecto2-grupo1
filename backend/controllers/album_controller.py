@@ -1,162 +1,143 @@
+# controllers/album_controllers.py
+
 from typing import List, Optional
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
-from models.album_model import Album
+from models.musintage_models import Album, Artist, Genre
 from schemas.album_schema import AlbumCreate, AlbumUpdate
 
 class AlbumControllers:
 
-    # ========== READ (GET) - Obtener datos ==========
+    # ========== READ (GET) ==========
     
     @staticmethod
     def get_all_albums(db: Session, skip: int = 0, limit: int = 100) -> List[Album]:
-        """
-        Obtener todos los álbumes con paginación
-        
-        Args:
-            db: Sesión de base de datos
-            skip: Número de registros a saltar
-            limit: Número máximo de registros a retornar
-        
-        Returns:
-            Lista de álbumes
-        """
+        """Obtener todos los álbumes con paginación"""
         try:
-            return db.query(Album).offset(skip).limit(limit).all()
+            return db.query(Album).options(
+                joinedload(Album.artist),
+                joinedload(Album.genre)
+            ).offset(skip).limit(limit).all()
         except SQLAlchemyError as e:
             print(f"Error al obtener álbumes: {e}")
             return []
 
     @staticmethod
     def get_album_by_id(db: Session, album_id: int) -> Optional[Album]:
-        """
-        Obtener un álbum por su ID
-        
-        Args:
-            db: Sesión de base de datos
-            album_id: ID del álbum a buscar
-        
-        Returns:
-            Álbum encontrado o None
-        """
+        """Obtener un álbum por su ID"""
         try:
-            return db.query(Album).filter(Album.id == album_id).first()
+            return db.query(Album).options(
+                joinedload(Album.artist),
+                joinedload(Album.genre)
+            ).filter(Album.id == album_id).first()
         except SQLAlchemyError as e:
             print(f"Error al obtener álbum con id {album_id}: {e}")
             return None
 
-    # ========== CREATE (POST) - Crear nuevo álbum ==========
+    # ========== CREATE (POST) ==========
     
     @staticmethod
     def create_album(db: Session, album_data: AlbumCreate) -> Album:
-        """
-        Crear un nuevo álbum
-        
-        Args:
-            db: Sesión de base de datos
-            album_data: Datos del álbum a crear (validados por Pydantic)
-        
-        Returns:
-            Álbum creado
-        
-        Raises:
-            ValueError: Si hay error de validación o integridad
-        """
+        """Crear un nuevo álbum"""
         try:
-            # Verificar si ya existe un álbum con el mismo título y artista (opcional)
-            existing_album = db.query(Album).filter(
-                Album.title == album_data.title,
-                Album.artist == album_data.artist
-            ).first()
+            # Verificar si el artista existe
+            artist = db.query(Artist).filter(Artist.id == album_data.artist_id).first()
+            if not artist:
+                raise ValueError(f"Artista con ID {album_data.artist_id} no existe")
             
-            if existing_album:
-                raise ValueError(f"Ya existe un álbum con título '{album_data.title}' del artista '{album_data.artist}'")
+            # Verificar si el género existe (si se proporcionó)
+            if album_data.genre_id:
+                genre = db.query(Genre).filter(Genre.id == album_data.genre_id).first()
+                if not genre:
+                    raise ValueError(f"Género con ID {album_data.genre_id} no existe")
             
-            # Crear nuevo álbum
-            db_album = Album(**album_data.model_dump())
+            # Crear el álbum
+            db_album = Album(
+                title=album_data.title,
+                artist_id=album_data.artist_id,
+                genre_id=album_data.genre_id,
+                price=album_data.price,
+                stock=album_data.stock,
+                year=album_data.year,
+                format_type=album_data.format_type,
+                image_url=album_data.image_url
+            )
+            
             db.add(db_album)
             db.commit()
             db.refresh(db_album)
-            return db_album
+            
+            # Cargar relaciones para la respuesta
+            return db.query(Album).options(
+                joinedload(Album.artist),
+                joinedload(Album.genre)
+            ).filter(Album.id == db_album.id).first()
             
         except IntegrityError as e:
             db.rollback()
-            raise ValueError(f"Error de integridad de datos: {str(e)}")
+            raise ValueError(f"Error de integridad: {str(e)}")
         except SQLAlchemyError as e:
             db.rollback()
             raise ValueError(f"Error al crear álbum: {str(e)}")
 
-    # ========== UPDATE (PUT/PATCH) - Actualizar álbum ==========
+    # ========== UPDATE (PUT/PATCH) ==========
     
     @staticmethod
-    def update_album(
-        db: Session, 
-        album_id: int, 
-        album_data: AlbumUpdate
-    ) -> Optional[Album]:
-        """
-        Actualizar un álbum existente
-        
-        Args:
-            db: Sesión de base de datos
-            album_id: ID del álbum a actualizar
-            album_data: Datos a actualizar (solo los campos proporcionados)
-        
-        Returns:
-            Álbum actualizado o None si no existe
-        
-        Raises:
-            ValueError: Si hay error de validación
-        """
+    def update_album(db: Session, album_id: int, album_data: AlbumUpdate) -> Optional[Album]:
+        """Actualizar un álbum existente"""
         try:
-            # Buscar el álbum
             db_album = db.query(Album).filter(Album.id == album_id).first()
             
             if not db_album:
                 return None
             
-            # Actualizar solo los campos que vienen en el request
+            # Obtener solo los campos que se enviaron
             update_data = album_data.model_dump(exclude_unset=True)
             
+            # Verificar si el nuevo artist_id existe
+            if 'artist_id' in update_data and update_data['artist_id']:
+                artist = db.query(Artist).filter(Artist.id == update_data['artist_id']).first()
+                if not artist:
+                    raise ValueError(f"Artista con ID {update_data['artist_id']} no existe")
+            
+            # Verificar si el nuevo genre_id existe
+            if 'genre_id' in update_data and update_data['genre_id']:
+                genre = db.query(Genre).filter(Genre.id == update_data['genre_id']).first()
+                if not genre:
+                    raise ValueError(f"Género con ID {update_data['genre_id']} no existe")
+            
+            # Actualizar campos
             for field, value in update_data.items():
-                setattr(db_album, field, value)
+                if hasattr(db_album, field):
+                    setattr(db_album, field, value)
             
             db.commit()
             db.refresh(db_album)
-            return db_album
+            
+            # Retornar con relaciones cargadas
+            return db.query(Album).options(
+                joinedload(Album.artist),
+                joinedload(Album.genre)
+            ).filter(Album.id == album_id).first()
             
         except IntegrityError as e:
             db.rollback()
-            raise ValueError(f"Error de integridad al actualizar: {str(e)}")
+            raise ValueError(f"Error de integridad: {str(e)}")
         except SQLAlchemyError as e:
             db.rollback()
             raise ValueError(f"Error al actualizar álbum: {str(e)}")
 
-    # ========== DELETE (DELETE) - Eliminar álbum ==========
+    # ========== DELETE (DELETE) ==========
     
     @staticmethod
     def delete_album(db: Session, album_id: int) -> bool:
-        """
-        Eliminar un álbum por su ID
-        
-        Args:
-            db: Sesión de base de datos
-            album_id: ID del álbum a eliminar
-        
-        Returns:
-            True si se eliminó correctamente, False si no existía
-        
-        Raises:
-            ValueError: Si hay error al eliminar
-        """
+        """Eliminar un álbum por su ID"""
         try:
-            # Buscar el álbum
             db_album = db.query(Album).filter(Album.id == album_id).first()
             
             if not db_album:
                 return False
             
-            # Eliminar el álbum
             db.delete(db_album)
             db.commit()
             return True
@@ -165,87 +146,28 @@ class AlbumControllers:
             db.rollback()
             raise ValueError(f"Error al eliminar álbum: {str(e)}")
 
-    # ========== MÉTODOS ADICIONALES ÚTILES ==========
+    # ========== MÉTODOS ADICIONALES ==========
     
     @staticmethod
-    def search_albums(
-        db: Session, 
-        search_term: str, 
-        skip: int = 0, 
-        limit: int = 100
-    ) -> List[Album]:
-        """
-        Buscar álbumes por título, artista o género
-        
-        Args:
-            db: Sesión de base de datos
-            search_term: Término de búsqueda
-            skip: Número de registros a saltar
-            limit: Número máximo de registros a retornar
-        
-        Returns:
-            Lista de álbumes que coinciden con la búsqueda
-        """
+    def get_albums_by_artist(db: Session, artist_id: int) -> List[Album]:
+        """Obtener todos los álbumes de un artista específico por ID"""
         try:
-            return db.query(Album).filter(
-                (Album.title.ilike(f"%{search_term}%")) |
-                (Album.artist.ilike(f"%{search_term}%")) |
-                (Album.genre.ilike(f"%{search_term}%"))
-            ).offset(skip).limit(limit).all()
-        except SQLAlchemyError as e:
-            print(f"Error en búsqueda: {e}")
-            return []
-    
-    @staticmethod
-    def get_albums_by_artist(db: Session, artist: str) -> List[Album]:
-        """
-        Obtener todos los álbumes de un artista específico
-        
-        Args:
-            db: Sesión de base de datos
-            artist: Nombre del artista
-        
-        Returns:
-            Lista de álbumes del artista
-        """
-        try:
-            return db.query(Album).filter(Album.artist.ilike(f"%{artist}%")).all()
+            return db.query(Album).filter(Album.artist_id == artist_id).options(
+                joinedload(Album.artist),
+                joinedload(Album.genre)
+            ).all()
         except SQLAlchemyError as e:
             print(f"Error al obtener álbumes por artista: {e}")
             return []
     
     @staticmethod
-    def update_stock(db: Session, album_id: int, quantity_change: int) -> Optional[Album]:
-        """
-        Actualizar el stock de un álbum (incrementar o decrementar)
-        
-        Args:
-            db: Sesión de base de datos
-            album_id: ID del álbum
-            quantity_change: Cambio en cantidad (positivo o negativo)
-        
-        Returns:
-            Álbum actualizado o None si no existe
-        
-        Raises:
-            ValueError: Si el stock resultante sería negativo
-        """
+    def get_albums_by_genre(db: Session, genre_id: int) -> List[Album]:
+        """Obtener todos los álbumes de un género específico por ID"""
         try:
-            db_album = db.query(Album).filter(Album.id == album_id).first()
-            
-            if not db_album:
-                return None
-            
-            new_stock = db_album.stock + quantity_change
-            
-            if new_stock < 0:
-                raise ValueError(f"No hay suficiente stock. Stock actual: {db_album.stock}")
-            
-            db_album.stock = new_stock
-            db.commit()
-            db.refresh(db_album)
-            return db_album
-            
+            return db.query(Album).filter(Album.genre_id == genre_id).options(
+                joinedload(Album.artist),
+                joinedload(Album.genre)
+            ).all()
         except SQLAlchemyError as e:
-            db.rollback()
-            raise ValueError(f"Error al actualizar stock: {str(e)}")
+            print(f"Error al obtener álbumes por género: {e}")
+            return []
