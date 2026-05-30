@@ -13,23 +13,23 @@ DB_NAME = settings.DB_NAME
 
 # Conexión con la base de datos
 DATABASE_URL = "mysql+pymysql://"+DB_USER+":"+DB_PASSWORD+"@"+DB_HOST+"/"+DB_NAME+""  # MySQL
+# DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 
 # Crea un engine
 engine = create_engine(DATABASE_URL)
 
 # Crea una clase para configurar la sesión
-Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+LocalSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Crea una clase base para los modelos
 Base = declarative_base()
 
 # función para obtener la sesión de la base de datos
 def get_db():
-    db = Session()  # Crea una nueva sesión
+    db = LocalSession()  # Crea una nueva sesión
     try:
         yield db  # Usa la sesión
     finally:
         db.close()  # Cierra la sesión al terminar
 
 # Esta función crea una sesión para trabajar con la base de datos, la devuelve mientras haces algo (yield db) y la cierra automáticamente al terminar.
-# Se usa mucho en frameworks como FastAPI para que cada petición tenga su propia sesión limpia.

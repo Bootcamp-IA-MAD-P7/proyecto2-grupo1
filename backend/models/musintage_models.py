@@ -12,15 +12,16 @@ class Album(Base):
     title = Column(String(45), nullable=False, index=True)
     artist_id = Column(Integer, ForeignKey("artist.id"), nullable=False, index=True)
     genre_id = Column(Integer, ForeignKey("genre.id"), index=True)
+    format_type_id = Column(Integer, ForeignKey("format_type.id"), nullable=False, index=True)
     price = Column(Numeric(10, 2), nullable=False, default=0.0)
     stock = Column(Integer, nullable=False, default=0)
     year = Column(Integer, nullable=True)
-    format_type = Column(String(50), index=True)
     image_url = Column(Text(500), nullable=True)
     
     # Relaciones
     artist = relationship("Artist", back_populates="albums")
     genre = relationship("Genre", back_populates="albums")
+    format_type = relationship("FormatType", back_populates="albums") 
 
 class Artist(Base):
     __tablename__ = "artist"
@@ -40,6 +41,16 @@ class Genre(Base):
     
     # Relación
     albums = relationship("Album", back_populates="genre")
+
+class FormatType(Base):
+    """Tabla catálogo de formatos"""
+    __tablename__ = "format_type"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(50), nullable=False, unique=True, index=True)
+    
+    # Relación con Album
+    albums = relationship("Album", back_populates="format_type")
     
 #### Tabla User ####
 
@@ -55,7 +66,7 @@ class User(Base):
     # Relaciones
     orders = relationship("Order", back_populates="user")
 
-class Order(Base):  # Cambiado de Orders a Order (mejor práctica)
+class Order(Base):
     __tablename__ = "orders"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -68,7 +79,7 @@ class Order(Base):  # Cambiado de Orders a Order (mejor práctica)
     user = relationship("User", back_populates="orders")
     details = relationship("OrderDetail", back_populates="order", cascade="all, delete-orphan")
 
-class OrderDetail(Base):  # Cambiado de order_details a OrderDetail (mejor práctica)
+class OrderDetail(Base):
     __tablename__ = "order_details"
 
     id = Column(Integer, primary_key=True, index=True)

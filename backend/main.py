@@ -1,3 +1,5 @@
+# main.py
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes.routes import router
@@ -26,7 +28,7 @@ app.add_middleware(
 )
 
 # Incluir rutas
-app.include_router(router)
+app.include_router(router, prefix="/api/v1", tags=["albums"])
 
 @app.get("/", tags=["root"])
 def root() -> Dict[str, Any]:
@@ -37,7 +39,9 @@ def root() -> Dict[str, Any]:
         "endpoints": {
             "albums": "/api/v1/albums/",
             "album_by_id": "/api/v1/albums/{id}",
-            "documentation": "/docs"
+            "api_health": "/health",
+            "documentation": "/docs",
+            "doc_response": "/redoc"
         }
     }
 
