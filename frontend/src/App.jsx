@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Catalogo from './pages/Catalogo'
 import DetalleAlbum from './pages/DetalleAlbum'
 import FormAlbum from './pages/FormAlbum'
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="catalogo" element={<Catalogo />} />
         <Route path="albumes/:id" element={<DetalleAlbum />} />
         <Route path="admin/albumes/nuevo" element={<FormAlbum />} />
+        <Route path="login" element={<Login />} />
       </Route>
     </Routes>
   )
