@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import AlbumCard from '../components/AlbumCard'
+import { getAlbumes } from '../services/api'
 
 const datosFalsos = [
   { id: 1, title: 'Thriller', artist: 'Michael Jackson', price: 19.99, image_url: 'https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png' },
@@ -9,14 +10,31 @@ const datosFalsos = [
 
 function Catalogo() {
   const [albumes, setAlbumes] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    setAlbumes(datosFalsos)
+    async function cargarAlbumes() {
+      try {
+        const data = await getAlbumes()
+        setAlbumes(data)
+      } catch (err) {
+        console.warn('Backend no disponible, usando datos falsos')
+        setAlbumes(datosFalsos)
+        setError('Backend no disponible')
+      } finally {
+        setLoading(false)
+      }
+    }
+    cargarAlbumes()
   }, [])
+
+  if (loading) return <p>Cargando...</p>
 
   return (
     <div>
       <h1>Catálogo</h1>
+      {error && <p>{error} — mostrando datos de prueba</p>}
       <div>
         {albumes.map(album => (
           <AlbumCard
