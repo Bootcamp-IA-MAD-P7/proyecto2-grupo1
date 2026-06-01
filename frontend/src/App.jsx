@@ -8,6 +8,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Catalogo />} />
+        <Route path="catalogo" element={<Catalogo />} />
         <Route path="albumes/:id" element={<DetalleAlbum />} />
       </Route>
     </Routes>
