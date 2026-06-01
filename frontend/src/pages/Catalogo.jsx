@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import AlbumCard from '../components/AlbumCard'
 
 const datosFalsos = [
   { id: 1, title: 'Thriller', artist: 'Michael Jackson', price: 19.99, image_url: 'https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png' },
@@ -18,12 +19,13 @@ function Catalogo() {
       <h1>Catálogo</h1>
       <div>
         {albumes.map(album => (
-          <div key={album.id}>
-            <img src={album.image_url} alt={album.title} width="100" />
-            <h2>{album.title}</h2>
-            <p>{album.artist}</p>
-            <p>{album.price} €</p>
-          </div>
+          <AlbumCard
+            key={album.id}
+            title={album.title}
+            artist={album.artist}
+            price={album.price}
+            image_url={album.image_url}
+          />
         ))}
       </div>
     </div>
