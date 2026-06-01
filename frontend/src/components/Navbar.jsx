@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom'
+
 function Navbar() {
-    return (
-        <nav>
-        <Link to="/">Gmail</Link>
-        <Link to="/imagenes">Imágenes</Link>
-        <img src="avatar.jpg" />
-        <button>Sign in</button>
+  return (
+    <nav>
+      <Link to="/">Inicio</Link>
+      <Link to="/catalogo">Catálogo</Link>
     </nav>
-    )
+  )
 }
+
+export default Navbar
