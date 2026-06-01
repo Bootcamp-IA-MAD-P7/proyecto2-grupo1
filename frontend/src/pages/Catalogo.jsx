@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import AlbumCard from '../components/AlbumCard'
 import { getAlbumes } from '../services/api'
 
@@ -37,13 +38,14 @@ function Catalogo() {
       {error && <p>{error} — mostrando datos de prueba</p>}
       <div>
         {albumes.map(album => (
-          <AlbumCard
-            key={album.id}
-            title={album.title}
-            artist={album.artist}
-            price={album.price}
-            image_url={album.image_url}
-          />
+          <Link key={album.id} to={`/albumes/${album.id}`}>
+            <AlbumCard
+              title={album.title}
+              artist={album.artist}
+              price={album.price}
+              image_url={album.image_url}
+            />
+          </Link>
         ))}
       </div>
     </div>
