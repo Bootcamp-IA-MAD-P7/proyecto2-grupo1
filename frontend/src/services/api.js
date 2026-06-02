@@ -34,3 +34,14 @@ export async function login(email, password) {
   const data = await response.json()
   return data
 }
+
+export async function register(nombre, email, password) {
+  const response = await fetch(`${BASE_URL}/auth/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: nombre, email, password })
+  })
+  if (!response.ok) throw new Error('Register failed')
+  const data = await response.json()
+  return data
+}
