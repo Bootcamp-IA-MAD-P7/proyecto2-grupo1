@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import AlbumCard from '../components/AlbumCard'
 import { getAlbumes } from '../services/api'
+import { useSearch } from '../context/SearchContext'
 
 const datosFalsos = [
   { id: 1, title: 'Thriller', artist: { name: 'Michael Jackson' }, genre: { name: 'Pop' }, format_type: { name: 'Vinilo' }, price: 19.99, stock: 5, year: 1982, image_url: 'https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png' },
@@ -10,15 +11,17 @@ const datosFalsos = [
 ]
 
 function Catalogo() {
-  const [albumes, setAlbumes] = useState([])
+  // const [albumes, setAlbumes] = useState([]) 
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [search, setSearch] = useState('')
-  const [genero, setGenero] = useState('')
-  const [artista, setArtista] = useState('')
-  const [formato, setFormato] = useState('')
-
+  const { search, genero, setGenero, artista, setArtista, formato, setFormato } = useSearch()
+  const [albumes, setAlbumes] = useState ([])
   useEffect(() => {
+    fetch('http://localhost:8000/api/v1/albums')
+      .then(response => response.json())
+      .then(data=>console.log(data))
+        // return response.json() 
+      
     async function cargarAlbumes() {
       try {
         const data = await getAlbumes()
@@ -46,15 +49,7 @@ function Catalogo() {
 
   return (
     <div>
-      <h1>Catálogo</h1>
       {error && <p>{error} — mostrando datos de prueba</p>}
-      <input
-        type="text"
-        placeholder="Buscar álbum..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
       <select value={genero} onChange={(e) => setGenero(e.target.value)}>
         <option value="">Todos los géneros</option>
         <option value="Pop">Pop</option>

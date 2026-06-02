@@ -1,5 +1,4 @@
-const BASE_URL = 'http://localhost:8000'
-
+const BASE_URL = 'http://localhost:8000/api/v1'
 export async function getAlbumes() {
   const response = await fetch(`${BASE_URL}/albums`)
   const data = await response.json()
