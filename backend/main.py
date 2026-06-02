@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes.routes import router_albums
+from routes.routes import router
 from database.database import engine, Base
 from typing import Any, Dict
 
@@ -28,7 +28,7 @@ app.add_middleware(
 )
 
 # Incluir rutas
-app.include_router(router_albums, prefix="/api/v1", tags=["albums"])
+app.include_router(router, prefix="/api/v1", tags=["albums"])
 
 @app.get("/", tags=["root"])
 def root() -> Dict[str, Any]:

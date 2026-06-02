@@ -1,0 +1,2136 @@
+[
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 1,
+    "title": "Thriller",
+    "price": 27.99,
+    "stock": 8,
+    "year": 1982,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 2,
+    "title": "Thriller",
+    "price": 9.99,
+    "stock": 5,
+    "year": 1982,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 3,
+    "title": "Thriller",
+    "price": 18.99,
+    "stock": 15,
+    "year": 1982,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 1,
+    "title": "Bad",
+    "price": 26.99,
+    "stock": 6,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/51/Michael_Jackson_-_Bad.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 2,
+    "title": "Bad",
+    "price": 9.49,
+    "stock": 4,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/51/Michael_Jackson_-_Bad.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 3,
+    "title": "Bad",
+    "price": 17.99,
+    "stock": 12,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/51/Michael_Jackson_-_Bad.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 3,
+    "title": "Dangerous",
+    "price": 16.99,
+    "stock": 20,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1f/Michael_Jackson_-_Dangerous.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 1,
+    "genre_id": 1,
+    "format_type_id": 2,
+    "title": "Dangerous",
+    "price": 8.99,
+    "stock": 7,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1f/Michael_Jackson_-_Dangerous.png",
+    "artist": {
+      "id": 1,
+      "name": "Michael Jackson"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 1,
+    "title": "Like a Virgin",
+    "price": 25.99,
+    "stock": 9,
+    "year": 1984,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a3/Like_a_virgin.jpg",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 2,
+    "title": "Like a Virgin",
+    "price": 8.99,
+    "stock": 6,
+    "year": 1984,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a3/Like_a_virgin.jpg",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 3,
+    "title": "Like a Virgin",
+    "price": 16.99,
+    "stock": 14,
+    "year": 1984,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a3/Like_a_virgin.jpg",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 1,
+    "title": "True Blue",
+    "price": 24.99,
+    "stock": 7,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/39/True_blue_madonna_album.PNG",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 2,
+    "title": "True Blue",
+    "price": 8.49,
+    "stock": 5,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/39/True_blue_madonna_album.PNG",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 3,
+    "title": "True Blue",
+    "price": 15.99,
+    "stock": 11,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/39/True_blue_madonna_album.PNG",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 1,
+    "title": "Like a Prayer",
+    "price": 23.99,
+    "stock": 5,
+    "year": 1989,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/23/Like_a_Prayer_Madonna_album.png",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 2,
+    "title": "Like a Prayer",
+    "price": 9.99,
+    "stock": 8,
+    "year": 1989,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/23/Like_a_Prayer_Madonna_album.png",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 2,
+    "genre_id": 1,
+    "format_type_id": 3,
+    "title": "Like a Prayer",
+    "price": 17.49,
+    "stock": 16,
+    "year": 1989,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/23/Like_a_Prayer_Madonna_album.png",
+    "artist": {
+      "id": 2,
+      "name": "Madonna"
+    },
+    "genre": {
+      "id": 1,
+      "name": "Pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 3,
+    "genre_id": 2,
+    "format_type_id": 1,
+    "title": "Purple Rain",
+    "price": 31.99,
+    "stock": 6,
+    "year": 1984,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9c/Purplerain.png",
+    "artist": {
+      "id": 3,
+      "name": "Prince"
+    },
+    "genre": {
+      "id": 2,
+      "name": "Pop / Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 3,
+    "genre_id": 2,
+    "format_type_id": 2,
+    "title": "Purple Rain",
+    "price": 9.99,
+    "stock": 4,
+    "year": 1984,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9c/Purplerain.png",
+    "artist": {
+      "id": 3,
+      "name": "Prince"
+    },
+    "genre": {
+      "id": 2,
+      "name": "Pop / Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 3,
+    "genre_id": 2,
+    "format_type_id": 3,
+    "title": "Purple Rain",
+    "price": 19.99,
+    "stock": 10,
+    "year": 1984,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9c/Purplerain.png",
+    "artist": {
+      "id": 3,
+      "name": "Prince"
+    },
+    "genre": {
+      "id": 2,
+      "name": "Pop / Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 3,
+    "genre_id": 2,
+    "format_type_id": 1,
+    "title": "Sign 'O' the Times",
+    "price": 34.99,
+    "stock": 4,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a9/SignOTheTimesCover.png",
+    "artist": {
+      "id": 3,
+      "name": "Prince"
+    },
+    "genre": {
+      "id": 2,
+      "name": "Pop / Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 3,
+    "genre_id": 2,
+    "format_type_id": 2,
+    "title": "Sign 'O' the Times",
+    "price": 10.99,
+    "stock": 3,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a9/SignOTheTimesCover.png",
+    "artist": {
+      "id": 3,
+      "name": "Prince"
+    },
+    "genre": {
+      "id": 2,
+      "name": "Pop / Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 3,
+    "genre_id": 2,
+    "format_type_id": 3,
+    "title": "Sign 'O' the Times",
+    "price": 21.99,
+    "stock": 8,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a9/SignOTheTimesCover.png",
+    "artist": {
+      "id": 3,
+      "name": "Prince"
+    },
+    "genre": {
+      "id": 2,
+      "name": "Pop / Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 4,
+    "genre_id": 3,
+    "format_type_id": 1,
+    "title": "Whitney Houston",
+    "price": 24.99,
+    "stock": 7,
+    "year": 1985,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/88/Whitney_Houston_debut_album.jpg",
+    "artist": {
+      "id": 4,
+      "name": "Whitney Houston"
+    },
+    "genre": {
+      "id": 3,
+      "name": "Pop / R&B"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 4,
+    "genre_id": 3,
+    "format_type_id": 2,
+    "title": "Whitney Houston",
+    "price": 8.99,
+    "stock": 5,
+    "year": 1985,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/88/Whitney_Houston_debut_album.jpg",
+    "artist": {
+      "id": 4,
+      "name": "Whitney Houston"
+    },
+    "genre": {
+      "id": 3,
+      "name": "Pop / R&B"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 4,
+    "genre_id": 3,
+    "format_type_id": 3,
+    "title": "Whitney Houston",
+    "price": 16.99,
+    "stock": 13,
+    "year": 1985,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/88/Whitney_Houston_debut_album.jpg",
+    "artist": {
+      "id": 4,
+      "name": "Whitney Houston"
+    },
+    "genre": {
+      "id": 3,
+      "name": "Pop / R&B"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 4,
+    "genre_id": 4,
+    "format_type_id": 3,
+    "title": "The Bodyguard (BSO)",
+    "price": 15.99,
+    "stock": 22,
+    "year": 1992,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b1/The_Bodyguard_Soundtrack.jpg",
+    "artist": {
+      "id": 4,
+      "name": "Whitney Houston"
+    },
+    "genre": {
+      "id": 4,
+      "name": "Pop / R&B / Soundtrack"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 4,
+    "genre_id": 4,
+    "format_type_id": 2,
+    "title": "The Bodyguard (BSO)",
+    "price": 8.49,
+    "stock": 9,
+    "year": 1992,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b1/The_Bodyguard_Soundtrack.jpg",
+    "artist": {
+      "id": 4,
+      "name": "Whitney Houston"
+    },
+    "genre": {
+      "id": 4,
+      "name": "Pop / R&B / Soundtrack"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 5,
+    "genre_id": 5,
+    "format_type_id": 1,
+    "title": "The Joshua Tree",
+    "price": 29.99,
+    "stock": 8,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Joshua_Tree.png",
+    "artist": {
+      "id": 5,
+      "name": "U2"
+    },
+    "genre": {
+      "id": 5,
+      "name": "Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 5,
+    "genre_id": 5,
+    "format_type_id": 2,
+    "title": "The Joshua Tree",
+    "price": 9.99,
+    "stock": 6,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Joshua_Tree.png",
+    "artist": {
+      "id": 5,
+      "name": "U2"
+    },
+    "genre": {
+      "id": 5,
+      "name": "Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 5,
+    "genre_id": 5,
+    "format_type_id": 3,
+    "title": "The Joshua Tree",
+    "price": 19.99,
+    "stock": 18,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Joshua_Tree.png",
+    "artist": {
+      "id": 5,
+      "name": "U2"
+    },
+    "genre": {
+      "id": 5,
+      "name": "Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 5,
+    "genre_id": 5,
+    "format_type_id": 3,
+    "title": "Achtung Baby",
+    "price": 18.99,
+    "stock": 14,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b8/Achtung_Baby_cover.jpg",
+    "artist": {
+      "id": 5,
+      "name": "U2"
+    },
+    "genre": {
+      "id": 5,
+      "name": "Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 5,
+    "genre_id": 5,
+    "format_type_id": 2,
+    "title": "Achtung Baby",
+    "price": 9.49,
+    "stock": 7,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b8/Achtung_Baby_cover.jpg",
+    "artist": {
+      "id": 5,
+      "name": "U2"
+    },
+    "genre": {
+      "id": 5,
+      "name": "Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 5,
+    "genre_id": 5,
+    "format_type_id": 1,
+    "title": "Achtung Baby",
+    "price": 32.99,
+    "stock": 4,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b8/Achtung_Baby_cover.jpg",
+    "artist": {
+      "id": 5,
+      "name": "U2"
+    },
+    "genre": {
+      "id": 5,
+      "name": "Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 6,
+    "genre_id": 6,
+    "format_type_id": 1,
+    "title": "Appetite for Destruction",
+    "price": 28.99,
+    "stock": 9,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/60/GunsnRosesAppetiteforDestructionalbumcover.jpg",
+    "artist": {
+      "id": 6,
+      "name": "Guns N' Roses"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 6,
+    "genre_id": 6,
+    "format_type_id": 2,
+    "title": "Appetite for Destruction",
+    "price": 9.49,
+    "stock": 7,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/60/GunsnRosesAppetiteforDestructionalbumcover.jpg",
+    "artist": {
+      "id": 6,
+      "name": "Guns N' Roses"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 6,
+    "genre_id": 6,
+    "format_type_id": 3,
+    "title": "Appetite for Destruction",
+    "price": 17.99,
+    "stock": 16,
+    "year": 1987,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/60/GunsnRosesAppetiteforDestructionalbumcover.jpg",
+    "artist": {
+      "id": 6,
+      "name": "Guns N' Roses"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 6,
+    "genre_id": 6,
+    "format_type_id": 3,
+    "title": "Use Your Illusion I",
+    "price": 16.99,
+    "stock": 11,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/fifty/GnR_Use_Your_Illusion_I.jpg",
+    "artist": {
+      "id": 6,
+      "name": "Guns N' Roses"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 6,
+    "genre_id": 6,
+    "format_type_id": 2,
+    "title": "Use Your Illusion I",
+    "price": 8.99,
+    "stock": 5,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/fifty/GnR_Use_Your_Illusion_I.jpg",
+    "artist": {
+      "id": 6,
+      "name": "Guns N' Roses"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 7,
+    "genre_id": 7,
+    "format_type_id": 3,
+    "title": "Nevermind",
+    "price": 16.99,
+    "stock": 25,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
+    "artist": {
+      "id": 7,
+      "name": "Nirvana"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 7,
+    "genre_id": 7,
+    "format_type_id": 2,
+    "title": "Nevermind",
+    "price": 8.99,
+    "stock": 10,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
+    "artist": {
+      "id": 7,
+      "name": "Nirvana"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 7,
+    "genre_id": 7,
+    "format_type_id": 1,
+    "title": "Nevermind",
+    "price": 35.99,
+    "stock": 6,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
+    "artist": {
+      "id": 7,
+      "name": "Nirvana"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 7,
+    "genre_id": 7,
+    "format_type_id": 3,
+    "title": "In Utero",
+    "price": 15.99,
+    "stock": 18,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3c/In_Utero_%28Nirvana%29_album_cover.jpg",
+    "artist": {
+      "id": 7,
+      "name": "Nirvana"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 7,
+    "genre_id": 7,
+    "format_type_id": 2,
+    "title": "In Utero",
+    "price": 8.49,
+    "stock": 7,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3c/In_Utero_%28Nirvana%29_album_cover.jpg",
+    "artist": {
+      "id": 7,
+      "name": "Nirvana"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 8,
+    "genre_id": 7,
+    "format_type_id": 3,
+    "title": "Ten",
+    "price": 15.99,
+    "stock": 20,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/PearlJam-Ten.jpg",
+    "artist": {
+      "id": 8,
+      "name": "Pearl Jam"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 8,
+    "genre_id": 7,
+    "format_type_id": 2,
+    "title": "Ten",
+    "price": 8.99,
+    "stock": 8,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/PearlJam-Ten.jpg",
+    "artist": {
+      "id": 8,
+      "name": "Pearl Jam"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 8,
+    "genre_id": 7,
+    "format_type_id": 1,
+    "title": "Ten",
+    "price": 33.99,
+    "stock": 5,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/PearlJam-Ten.jpg",
+    "artist": {
+      "id": 8,
+      "name": "Pearl Jam"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 8,
+    "genre_id": 7,
+    "format_type_id": 3,
+    "title": "Vs.",
+    "price": 16.49,
+    "stock": 15,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d7/Pearl_Jam_-_Vs.jpg",
+    "artist": {
+      "id": 8,
+      "name": "Pearl Jam"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 8,
+    "genre_id": 7,
+    "format_type_id": 2,
+    "title": "Vs.",
+    "price": 8.49,
+    "stock": 6,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d7/Pearl_Jam_-_Vs.jpg",
+    "artist": {
+      "id": 8,
+      "name": "Pearl Jam"
+    },
+    "genre": {
+      "id": 7,
+      "name": "Grunge / Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 9,
+    "genre_id": 8,
+    "format_type_id": 1,
+    "title": "Master of Puppets",
+    "price": 30.99,
+    "stock": 7,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg",
+    "artist": {
+      "id": 9,
+      "name": "Metallica"
+    },
+    "genre": {
+      "id": 8,
+      "name": "Thrash Metal"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 9,
+    "genre_id": 8,
+    "format_type_id": 2,
+    "title": "Master of Puppets",
+    "price": 9.49,
+    "stock": 5,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg",
+    "artist": {
+      "id": 9,
+      "name": "Metallica"
+    },
+    "genre": {
+      "id": 8,
+      "name": "Thrash Metal"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 9,
+    "genre_id": 8,
+    "format_type_id": 3,
+    "title": "Master of Puppets",
+    "price": 18.99,
+    "stock": 12,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg",
+    "artist": {
+      "id": 9,
+      "name": "Metallica"
+    },
+    "genre": {
+      "id": 8,
+      "name": "Thrash Metal"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 9,
+    "genre_id": 9,
+    "format_type_id": 3,
+    "title": "Metallica (Black Album)",
+    "price": 19.49,
+    "stock": 22,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/84/Metallica_-_Metallica.jpg",
+    "artist": {
+      "id": 9,
+      "name": "Metallica"
+    },
+    "genre": {
+      "id": 9,
+      "name": "Heavy Metal"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 9,
+    "genre_id": 9,
+    "format_type_id": 2,
+    "title": "Metallica (Black Album)",
+    "price": 9.99,
+    "stock": 9,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/84/Metallica_-_Metallica.jpg",
+    "artist": {
+      "id": 9,
+      "name": "Metallica"
+    },
+    "genre": {
+      "id": 9,
+      "name": "Heavy Metal"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 9,
+    "genre_id": 9,
+    "format_type_id": 1,
+    "title": "Metallica (Black Album)",
+    "price": 37.99,
+    "stock": 5,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/84/Metallica_-_Metallica.jpg",
+    "artist": {
+      "id": 9,
+      "name": "Metallica"
+    },
+    "genre": {
+      "id": 9,
+      "name": "Heavy Metal"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 10,
+    "genre_id": 6,
+    "format_type_id": 1,
+    "title": "Slippery When Wet",
+    "price": 26.99,
+    "stock": 8,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3d/Slipperywhenwetalbumart.jpg",
+    "artist": {
+      "id": 10,
+      "name": "Bon Jovi"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 10,
+    "genre_id": 6,
+    "format_type_id": 2,
+    "title": "Slippery When Wet",
+    "price": 8.99,
+    "stock": 6,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3d/Slipperywhenwetalbumart.jpg",
+    "artist": {
+      "id": 10,
+      "name": "Bon Jovi"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 10,
+    "genre_id": 6,
+    "format_type_id": 3,
+    "title": "Slippery When Wet",
+    "price": 16.99,
+    "stock": 14,
+    "year": 1986,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3d/Slipperywhenwetalbumart.jpg",
+    "artist": {
+      "id": 10,
+      "name": "Bon Jovi"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 10,
+    "genre_id": 6,
+    "format_type_id": 1,
+    "title": "New Jersey",
+    "price": 25.99,
+    "stock": 6,
+    "year": 1988,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/82/New_Jersey_album_cover.jpg",
+    "artist": {
+      "id": 10,
+      "name": "Bon Jovi"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 10,
+    "genre_id": 6,
+    "format_type_id": 2,
+    "title": "New Jersey",
+    "price": 8.49,
+    "stock": 4,
+    "year": 1988,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/82/New_Jersey_album_cover.jpg",
+    "artist": {
+      "id": 10,
+      "name": "Bon Jovi"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 10,
+    "genre_id": 6,
+    "format_type_id": 3,
+    "title": "New Jersey",
+    "price": 15.99,
+    "stock": 10,
+    "year": 1988,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/82/New_Jersey_album_cover.jpg",
+    "artist": {
+      "id": 10,
+      "name": "Bon Jovi"
+    },
+    "genre": {
+      "id": 6,
+      "name": "Hard Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 11,
+    "genre_id": 10,
+    "format_type_id": 1,
+    "title": "Violator",
+    "price": 29.99,
+    "stock": 7,
+    "year": 1990,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/90/Depeche_Mode_-_Violator.jpg",
+    "artist": {
+      "id": 11,
+      "name": "Depeche Mode"
+    },
+    "genre": {
+      "id": 10,
+      "name": "Synth-pop"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 11,
+    "genre_id": 10,
+    "format_type_id": 2,
+    "title": "Violator",
+    "price": 9.99,
+    "stock": 5,
+    "year": 1990,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/90/Depeche_Mode_-_Violator.jpg",
+    "artist": {
+      "id": 11,
+      "name": "Depeche Mode"
+    },
+    "genre": {
+      "id": 10,
+      "name": "Synth-pop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 11,
+    "genre_id": 10,
+    "format_type_id": 3,
+    "title": "Violator",
+    "price": 20.99,
+    "stock": 13,
+    "year": 1990,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/90/Depeche_Mode_-_Violator.jpg",
+    "artist": {
+      "id": 11,
+      "name": "Depeche Mode"
+    },
+    "genre": {
+      "id": 10,
+      "name": "Synth-pop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 11,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Songs of Faith and Devotion",
+    "price": 18.99,
+    "stock": 9,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1f/Depeche_Mode_-_Songs_of_Faith_and_Devotion.jpg",
+    "artist": {
+      "id": 11,
+      "name": "Depeche Mode"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 11,
+    "genre_id": 11,
+    "format_type_id": 2,
+    "title": "Songs of Faith and Devotion",
+    "price": 8.99,
+    "stock": 4,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1f/Depeche_Mode_-_Songs_of_Faith_and_Devotion.jpg",
+    "artist": {
+      "id": 11,
+      "name": "Depeche Mode"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 12,
+    "genre_id": 12,
+    "format_type_id": 1,
+    "title": "Disintegration",
+    "price": 28.99,
+    "stock": 6,
+    "year": 1989,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/8e/Disintegration_cover.jpg",
+    "artist": {
+      "id": 12,
+      "name": "The Cure"
+    },
+    "genre": {
+      "id": 12,
+      "name": "Post-punk / Gothic Rock"
+    },
+    "format_type": {
+      "id": 1,
+      "name": "Vinilo"
+    }
+  },
+  {
+    "artist_id": 12,
+    "genre_id": 12,
+    "format_type_id": 2,
+    "title": "Disintegration",
+    "price": 9.49,
+    "stock": 4,
+    "year": 1989,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/8e/Disintegration_cover.jpg",
+    "artist": {
+      "id": 12,
+      "name": "The Cure"
+    },
+    "genre": {
+      "id": 12,
+      "name": "Post-punk / Gothic Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 12,
+    "genre_id": 12,
+    "format_type_id": 3,
+    "title": "Disintegration",
+    "price": 17.99,
+    "stock": 11,
+    "year": 1989,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/8e/Disintegration_cover.jpg",
+    "artist": {
+      "id": 12,
+      "name": "The Cure"
+    },
+    "genre": {
+      "id": 12,
+      "name": "Post-punk / Gothic Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 12,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Wish",
+    "price": 16.99,
+    "stock": 8,
+    "year": 1992,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/00/The_Cure_-_Wish.png",
+    "artist": {
+      "id": 12,
+      "name": "The Cure"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 12,
+    "genre_id": 11,
+    "format_type_id": 2,
+    "title": "Wish",
+    "price": 8.99,
+    "stock": 5,
+    "year": 1992,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/00/The_Cure_-_Wish.png",
+    "artist": {
+      "id": 12,
+      "name": "The Cure"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 13,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Out of Time",
+    "price": 15.99,
+    "stock": 13,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/12/Out_of_Time_%28album%29.jpg",
+    "artist": {
+      "id": 13,
+      "name": "R.E.M."
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 13,
+    "genre_id": 11,
+    "format_type_id": 2,
+    "title": "Out of Time",
+    "price": 8.49,
+    "stock": 6,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/12/Out_of_Time_%28album%29.jpg",
+    "artist": {
+      "id": 13,
+      "name": "R.E.M."
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 13,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Automatic for the People",
+    "price": 16.49,
+    "stock": 17,
+    "year": 1992,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/AutomaticForThePeople.jpg",
+    "artist": {
+      "id": 13,
+      "name": "R.E.M."
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 13,
+    "genre_id": 11,
+    "format_type_id": 2,
+    "title": "Automatic for the People",
+    "price": 8.99,
+    "stock": 7,
+    "year": 1992,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4a/AutomaticForThePeople.jpg",
+    "artist": {
+      "id": 13,
+      "name": "R.E.M."
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 14,
+    "genre_id": 13,
+    "format_type_id": 3,
+    "title": "Blood Sugar Sex Magik",
+    "price": 17.99,
+    "stock": 16,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/71/BSSM.jpg",
+    "artist": {
+      "id": 14,
+      "name": "Red Hot Chili Peppers"
+    },
+    "genre": {
+      "id": 13,
+      "name": "Funk Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 14,
+    "genre_id": 13,
+    "format_type_id": 2,
+    "title": "Blood Sugar Sex Magik",
+    "price": 8.99,
+    "stock": 8,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/71/BSSM.jpg",
+    "artist": {
+      "id": 14,
+      "name": "Red Hot Chili Peppers"
+    },
+    "genre": {
+      "id": 13,
+      "name": "Funk Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 14,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Californication",
+    "price": 16.99,
+    "stock": 20,
+    "year": 1999,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d3/Californication_album_cover.jpg",
+    "artist": {
+      "id": 14,
+      "name": "Red Hot Chili Peppers"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 15,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Siamese Dream",
+    "price": 16.49,
+    "stock": 15,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4e/Siamese_dream_album_cover.jpg",
+    "artist": {
+      "id": 15,
+      "name": "Smashing Pumpkins"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 15,
+    "genre_id": 11,
+    "format_type_id": 2,
+    "title": "Siamese Dream",
+    "price": 8.49,
+    "stock": 6,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4e/Siamese_dream_album_cover.jpg",
+    "artist": {
+      "id": 15,
+      "name": "Smashing Pumpkins"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 15,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Mellon Collie and the Infinite Sadness",
+    "price": 21.99,
+    "stock": 12,
+    "year": 1995,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/0c/Mellon_Collie_and_the_Infinite_Sadness.jpg",
+    "artist": {
+      "id": 15,
+      "name": "Smashing Pumpkins"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 16,
+    "genre_id": 14,
+    "format_type_id": 3,
+    "title": "Definitely Maybe",
+    "price": 15.99,
+    "stock": 14,
+    "year": 1994,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/ed/DefinitelyMaybealbumcover.jpg",
+    "artist": {
+      "id": 16,
+      "name": "Oasis"
+    },
+    "genre": {
+      "id": 14,
+      "name": "Britpop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 16,
+    "genre_id": 14,
+    "format_type_id": 2,
+    "title": "Definitely Maybe",
+    "price": 8.49,
+    "stock": 5,
+    "year": 1994,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/ed/DefinitelyMaybealbumcover.jpg",
+    "artist": {
+      "id": 16,
+      "name": "Oasis"
+    },
+    "genre": {
+      "id": 14,
+      "name": "Britpop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 16,
+    "genre_id": 14,
+    "format_type_id": 3,
+    "title": "(What's the Story) Morning Glory?",
+    "price": 16.49,
+    "stock": 19,
+    "year": 1995,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b0/Morning_Glory_%28Oasis_album_-_cover_art%29.jpg",
+    "artist": {
+      "id": 16,
+      "name": "Oasis"
+    },
+    "genre": {
+      "id": 14,
+      "name": "Britpop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 16,
+    "genre_id": 14,
+    "format_type_id": 2,
+    "title": "(What's the Story) Morning Glory?",
+    "price": 8.99,
+    "stock": 7,
+    "year": 1995,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b0/Morning_Glory_%28Oasis_album_-_cover_art%29.jpg",
+    "artist": {
+      "id": 16,
+      "name": "Oasis"
+    },
+    "genre": {
+      "id": 14,
+      "name": "Britpop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 17,
+    "genre_id": 11,
+    "format_type_id": 3,
+    "title": "Jagged Little Pill",
+    "price": 16.99,
+    "stock": 18,
+    "year": 1995,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/ee/Alanis_Morissette_-_Jagged_Little_Pill.jpg",
+    "artist": {
+      "id": 17,
+      "name": "Alanis Morissette"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 17,
+    "genre_id": 11,
+    "format_type_id": 2,
+    "title": "Jagged Little Pill",
+    "price": 9.49,
+    "stock": 8,
+    "year": 1995,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/ee/Alanis_Morissette_-_Jagged_Little_Pill.jpg",
+    "artist": {
+      "id": 17,
+      "name": "Alanis Morissette"
+    },
+    "genre": {
+      "id": 11,
+      "name": "Alternative Rock"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 18,
+    "genre_id": 15,
+    "format_type_id": 3,
+    "title": "Music Box",
+    "price": 15.99,
+    "stock": 21,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/ac/Mariah_Carey_-_Music_Box.png",
+    "artist": {
+      "id": 18,
+      "name": "Mariah Carey"
+    },
+    "genre": {
+      "id": 15,
+      "name": "Pop / Ballad"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 18,
+    "genre_id": 15,
+    "format_type_id": 2,
+    "title": "Music Box",
+    "price": 7.99,
+    "stock": 9,
+    "year": 1993,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/ac/Mariah_Carey_-_Music_Box.png",
+    "artist": {
+      "id": 18,
+      "name": "Mariah Carey"
+    },
+    "genre": {
+      "id": 15,
+      "name": "Pop / Ballad"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 18,
+    "genre_id": 3,
+    "format_type_id": 3,
+    "title": "Daydream",
+    "price": 16.49,
+    "stock": 14,
+    "year": 1995,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/f/f9/Mariah_Carey_-_Daydream.png",
+    "artist": {
+      "id": 18,
+      "name": "Mariah Carey"
+    },
+    "genre": {
+      "id": 3,
+      "name": "Pop / R&B"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 19,
+    "genre_id": 16,
+    "format_type_id": 3,
+    "title": "CrazySexyCool",
+    "price": 15.99,
+    "stock": 16,
+    "year": 1994,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/84/TLC_CrazySexyCool.png",
+    "artist": {
+      "id": 19,
+      "name": "TLC"
+    },
+    "genre": {
+      "id": 16,
+      "name": "R&B / Hip Hop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 19,
+    "genre_id": 16,
+    "format_type_id": 2,
+    "title": "CrazySexyCool",
+    "price": 8.49,
+    "stock": 6,
+    "year": 1994,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/84/TLC_CrazySexyCool.png",
+    "artist": {
+      "id": 19,
+      "name": "TLC"
+    },
+    "genre": {
+      "id": 16,
+      "name": "R&B / Hip Hop"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 19,
+    "genre_id": 16,
+    "format_type_id": 3,
+    "title": "FanMail",
+    "price": 14.99,
+    "stock": 10,
+    "year": 1999,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/72/TLC_FanMail_album_cover.jpg",
+    "artist": {
+      "id": 19,
+      "name": "TLC"
+    },
+    "genre": {
+      "id": 16,
+      "name": "R&B / Hip Hop"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 20,
+    "genre_id": 17,
+    "format_type_id": 3,
+    "title": "Superunknown",
+    "price": 17.99,
+    "stock": 13,
+    "year": 1994,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/13/Soundgarden_-_Superunknown.png",
+    "artist": {
+      "id": 20,
+      "name": "Soundgarden"
+    },
+    "genre": {
+      "id": 17,
+      "name": "Grunge"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 20,
+    "genre_id": 17,
+    "format_type_id": 2,
+    "title": "Superunknown",
+    "price": 8.99,
+    "stock": 5,
+    "year": 1994,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/13/Soundgarden_-_Superunknown.png",
+    "artist": {
+      "id": 20,
+      "name": "Soundgarden"
+    },
+    "genre": {
+      "id": 17,
+      "name": "Grunge"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  },
+  {
+    "artist_id": 20,
+    "genre_id": 17,
+    "format_type_id": 3,
+    "title": "Badmotorfinger",
+    "price": 16.99,
+    "stock": 9,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/10/Soundgarden_-_Badmotorfinger.jpg",
+    "artist": {
+      "id": 20,
+      "name": "Soundgarden"
+    },
+    "genre": {
+      "id": 17,
+      "name": "Grunge"
+    },
+    "format_type": {
+      "id": 3,
+      "name": "CD"
+    }
+  },
+  {
+    "artist_id": 20,
+    "genre_id": 17,
+    "format_type_id": 2,
+    "title": "Badmotorfinger",
+    "price": 8.49,
+    "stock": 4,
+    "year": 1991,
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/10/Soundgarden_-_Badmotorfinger.jpg",
+    "artist": {
+      "id": 20,
+      "name": "Soundgarden"
+    },
+    "genre": {
+      "id": 17,
+      "name": "Grunge"
+    },
+    "format_type": {
+      "id": 2,
+      "name": "Cassette"
+    }
+  }
+]
