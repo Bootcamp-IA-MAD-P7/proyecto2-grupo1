@@ -63,7 +63,7 @@ function Catalog() {
         <option value="Cassette">Cassette</option>
       </select>
       {filteredAlbums.length === 0 && <p>No results found</p>}
-      <div>
+      <div className="albums-grid">
         {filteredAlbums.map(album => (
           <Link key={album.id} to={`/albumes/${album.id}`}>
             <AlbumCard
