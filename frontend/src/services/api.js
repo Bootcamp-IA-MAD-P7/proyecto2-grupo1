@@ -60,3 +60,21 @@ export async function register(nombre, email, password) {
   const data = await response.json()
   return data
 }
+
+  export async function getArtists() {
+  const response = await fetch(`${BASE_URL}/artists`)
+  const data = await response.json()
+  return data
+}
+
+export async function getGenres() {
+  const response = await fetch(`${BASE_URL}/genres`)
+  const data = await response.json()
+  return data
+}
+
+export async function getFormats() {
+  const response = await fetch(`${BASE_URL}/formats`)
+  const data = await response.json()
+  return data
+}
