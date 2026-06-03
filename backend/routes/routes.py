@@ -5,10 +5,18 @@ from sqlalchemy.orm import Session
 from typing import List
 
 from controllers.album_controller import AlbumControllers
+from controllers.artist_controller import ArtistControllers
+from controllers.genre_controller import GenreControllers
+from controllers.format_type_controller import FormatTypeControllers
 from schemas.album_schema import AlbumResponse, AlbumCreate, AlbumUpdate
+from schemas.artist_schema import ArtistResponse
+from schemas.genre_schema import GenreResponse
+from schemas.format_type_schema import FormatTypeResponse
 from database.database import get_db
 
 router = APIRouter()
+
+# ========== RUTAS DE ÁLBUMES (CRUD) ==========
 
 @router.get("/albums", response_model=List[AlbumResponse])
 def get_albums(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
@@ -41,3 +49,24 @@ def delete_album(album_id: int, db: Session = Depends(get_db)):
     if not deleted:
         raise HTTPException(status_code=404, detail="Álbum no encontrado")
     return None
+
+# ========== RUTAS DE ARTISTAS (SOLO LECTURA) ==========
+
+@router.get("/artists", response_model=List[ArtistResponse])
+def get_artists(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    """Obtener todos los artistas"""
+    return ArtistControllers.get_all_artists(db, skip=skip, limit=limit)
+
+# ========== RUTAS DE GÉNEROS (SOLO LECTURA) ==========
+
+@router.get("/genres", response_model=List[GenreResponse])
+def get_genres(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    """Obtener todos los géneros musicales"""
+    return GenreControllers.get_all_genres(db, skip=skip, limit=limit)
+
+# ========== RUTAS DE FORMATOS (SOLO LECTURA) ==========
+
+@router.get("/formats", response_model=List[FormatTypeResponse])
+def get_formats(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    """Obtener todos los formatos disponibles"""
+    return FormatTypeControllers.get_all_formats(db, skip=skip, limit=limit)
