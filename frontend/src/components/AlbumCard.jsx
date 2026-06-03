@@ -1,7 +1,10 @@
 function AlbumCard({ title, artist, genre, format_type, price, year, image_url }) {
   return (
-    <div>
-      <img src={image_url} alt={title} width="100" />
+    <div className="card">
+      <div className="cover-wrap">
+        <img src={image_url} alt={title} width="100" />
+      </div>
+
       <h2>{title}</h2>
       <p>{artist.name}</p>
       <p>{genre.name}</p>

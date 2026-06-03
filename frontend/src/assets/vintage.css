@@ -307,3 +307,27 @@ nav a:hover, nav a.active {
 #root a[href="/"] img:active {
   transform: scale(0.97);
 }
+
+.album-grid {
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  background-color: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(224, 83, 60, 0.3);
+}
