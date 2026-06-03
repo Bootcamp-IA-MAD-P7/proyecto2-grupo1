@@ -14,6 +14,9 @@ function Catalogo() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('')
+  const [genero, setGenero] = useState('')
+  const [artista, setArtista] = useState('')
+  const [formato, setFormato] = useState('')
 
   useEffect(() => {
     async function cargarAlbumes() {
@@ -31,9 +34,13 @@ function Catalogo() {
     cargarAlbumes()
   }, [])
 
-  const albumesFiltrados = albumes.filter(album =>
-    album.title.toLowerCase().includes(search.toLowerCase())
-  )
+  const albumesFiltrados = albumes.filter(album => {
+    const coincideBusqueda = album.title.toLowerCase().includes(search.toLowerCase())
+    const coincideGenero = genero === '' || album.genre.name === genero
+    const coincideArtista = artista === '' || album.artist.name === artista
+    const coincideFormato = formato === '' || album.format_type.name === formato
+    return coincideBusqueda && coincideGenero && coincideArtista && coincideFormato
+  })
 
   if (loading) return <p>Cargando...</p>
 
@@ -47,6 +54,27 @@ function Catalogo() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+
+      <select value={genero} onChange={(e) => setGenero(e.target.value)}>
+        <option value="">Todos los géneros</option>
+        <option value="Pop">Pop</option>
+        <option value="Rock">Rock</option>
+      </select>
+
+      <select value={artista} onChange={(e) => setArtista(e.target.value)}>
+        <option value="">Todos los artistas</option>
+        <option value="Michael Jackson">Michael Jackson</option>
+        <option value="AC/DC">AC/DC</option>
+        <option value="Fleetwood Mac">Fleetwood Mac</option>
+      </select>
+
+      <select value={formato} onChange={(e) => setFormato(e.target.value)}>
+        <option value="">Todos los formatos</option>
+        <option value="Vinilo">Vinilo</option>
+        <option value="CD">CD</option>
+        <option value="Cassette">Cassette</option>
+      </select>
+
       {albumesFiltrados.length === 0 && <p>No se encontraron resultados</p>}
       <div>
         {albumesFiltrados.map(album => (

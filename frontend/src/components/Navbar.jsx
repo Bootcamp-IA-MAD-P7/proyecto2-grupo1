@@ -8,6 +8,8 @@ function Navbar() {
         <img src={logoImg} alt="Musvintage" />
       </Link>
       <Link to="/catalogo">Catálogo</Link>
+      <Link to="/login">IniciarSecion</Link>
+      <Link to="/register">Registro</Link>
     </nav>
   )
 }

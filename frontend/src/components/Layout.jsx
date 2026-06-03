@@ -6,7 +6,7 @@ function Layout() {
   return (
     <div>
       <Navbar />
-      <main>
+      <main style={{ paddingTop: '60px' }}>
         <Outlet />
       </main>
       <Footer />
