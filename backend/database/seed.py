@@ -1,11 +1,13 @@
-# seed_data.py
+# database/seed.py
 
 from database.database import LocalSession
 from sqlalchemy.orm import Session
 from models.musintage_models import Artist, Genre, FormatType
+import logging
+
+logger = logging.getLogger(__name__)
 
 def seed_artists(db: Session):
-    """Popular tabla de artistas"""
     artists = [
         {"name": "Michael Jackson", "nationality": "American"},
         {"name": "Madonna", "nationality": "American"},
@@ -28,20 +30,16 @@ def seed_artists(db: Session):
         {"name": "TLC", "nationality": "American"},
         {"name": "Soundgarden", "nationality": "American"}
     ]
-    
-    for artist_data in artists:
-        # Verificar si ya existe
-        existing = db.query(Artist).filter(Artist.name == artist_data["name"]).first()
-        if not existing:
-            artist = Artist(**artist_data)
-            db.add(artist)
-            print(f"✓ Añadido artista: {artist_data['name']}")
-    
+    added = 0
+    for data in artists:
+        if not db.query(Artist).filter(Artist.name == data["name"]).first():
+            db.add(Artist(**data))
+            added += 1
     db.commit()
-    print(f"✅ Total artistas insertados/actualizados: {len(artists)}")
+    logger.info(f"✓ Artistas: {added} nuevos / {len(artists)} totales")
+    return added
 
 def seed_genres(db: Session):
-    """Popular tabla de géneros"""
     genres = [
         {"name": "Pop"},
         {"name": "Pop / Rock"},
@@ -61,62 +59,51 @@ def seed_genres(db: Session):
         {"name": "R&B / Hip Hop"},
         {"name": "Grunge"}
     ]
-    
-    for genre_data in genres:
-        # Verificar si ya existe
-        existing = db.query(Genre).filter(Genre.name == genre_data["name"]).first()
-        if not existing:
-            genre = Genre(**genre_data)
-            db.add(genre)
-            print(f"✓ Añadido género: {genre_data['name']}")
-    
+    added = 0
+    for data in genres:
+        if not db.query(Genre).filter(Genre.name == data["name"]).first():
+            db.add(Genre(**data))
+            added += 1
     db.commit()
-    print(f"✅ Total géneros insertados/actualizados: {len(genres)}")
+    logger.info(f"✓ Géneros: {added} nuevos / {len(genres)} totales")
+    return added
 
 def seed_format_types(db: Session):
-    """Popular tabla de tipos de formato"""
     formats = [
         {"name": "Vinilo"},
         {"name": "Cassette"},
         {"name": "CD"},
         {"name": "Digital"}
     ]
-    
-    for format_data in formats:
-        # Verificar si ya existe
-        existing = db.query(FormatType).filter(FormatType.name == format_data["name"]).first()
-        if not existing:
-            format_type = FormatType(**format_data)
-            db.add(format_type)
-            print(f"✓ Añadido formato: {format_data['name']}")
-    
+    added = 0
+    for data in formats:
+        if not db.query(FormatType).filter(FormatType.name == data["name"]).first():
+            db.add(FormatType(**data))
+            added += 1
     db.commit()
-    
-    # Mostrar los formatos con sus IDs
-    all_formats = db.query(FormatType).all()
-    print(f"✅ Total formatos insertados/actualizados: {len(formats)}")
-    print("\n📋 IDs de formatos disponibles:")
-    for f in all_formats:
-        print(f"   ID {f.id}: {f.name}")
+    logger.info(f"✓ Formatos: {added} nuevos / {len(formats)} totales")
+    return added
 
-def main():
-    print("🌱 Iniciando seeding de base de datos...")
-    print("=" * 50)
-    
+def run_seed():
+    logger.info("🌱 Iniciando seeding...")
     db = LocalSession()
     try:
-        seed_artists(db)
-        print("-" * 40)
-        seed_genres(db)
-        print("-" * 40)
-        seed_format_types(db)
-        print("=" * 50)
-        print("\n✨ Seeding completado exitosamente!")
+        a = seed_artists(db)
+        g = seed_genres(db)
+        f = seed_format_types(db)
+        total = a + g + f
+        if total == 0:
+            logger.info("✅ BD ya poblada")
+        else:
+            logger.info(f"✨ Seeding completado: {total} registros nuevos")
+        return True
     except Exception as e:
-        print(f"❌ Error durante el seeding: {e}")
+        logger.error(f"❌ Error: {e}")
         db.rollback()
+        return False
     finally:
         db.close()
 
 if __name__ == "__main__":
-    main()
+    logging.basicConfig(level=logging.INFO)
+    run_seed()

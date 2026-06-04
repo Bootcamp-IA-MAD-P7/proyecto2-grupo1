@@ -1,35 +1,48 @@
 # database/database.py
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import QueuePool
 from config.config_variables import settings
+import os
 
- # Variables de entorno para no exponer información sensible
-DB_USER = settings.DB_USER
-DB_PASSWORD = settings.DB_PASSWORD
-DB_HOST = settings.DB_HOST
-DB_NAME = settings.DB_NAME
+DATABASE_URL = settings.get_database_url
+IS_PRODUCTION = os.getenv("ENVIRONMENT", "development") == "production"
 
-# Conexión con la base de datos
-DATABASE_URL = "mysql+pymysql://"+DB_USER+":"+DB_PASSWORD+"@"+DB_HOST+"/"+DB_NAME+""  # MySQL
-# DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
+# Configuración del engine según entorno
+if IS_PRODUCTION:
+    engine = create_engine(
+        DATABASE_URL,
+        poolclass=QueuePool,
+        pool_size=5,
+        max_overflow=10,
+        pool_pre_ping=True,
+        pool_recycle=3600,
+        echo=False
+    )
+else:
+    engine = create_engine(
+        DATABASE_URL,
+        pool_pre_ping=True,
+        echo=True
+    )
 
-# Crea un engine
-engine = create_engine(DATABASE_URL)
-
-# Crea una clase para configurar la sesión
 LocalSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Crea una clase base para los modelos
 Base = declarative_base()
 
-# función para obtener la sesión de la base de datos
 def get_db():
-    db = LocalSession()  # Crea una nueva sesión
+    db = LocalSession()
     try:
-        yield db  # Usa la sesión
+        yield db
     finally:
-        db.close()  # Cierra la sesión al terminar
+        db.close()
 
-# Esta función crea una sesión para trabajar con la base de datos, la devuelve mientras haces algo (yield db) y la cierra automáticamente al terminar.
+def test_connection():
+    try:
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        return True
+    except Exception as e:
+        print(f"❌ Error de conexión: {e}")
+        return False
