@@ -40,47 +40,57 @@ function Catalog() {
     return matchSearch && matchGenre && matchArtist && matchFormat
   })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <p className="loading">Cargando catálogo...</p>
 
   return (
-    <div>
-      {error && <p>{error} — showing test data</p>}
-      <select value={genero} onChange={(e) => setGenero(e.target.value)}>
-        <option value="">All genres</option>
+  <div className="page">
+    {error && <p className="error-banner">⚠ {error} — mostrando datos de prueba</p>}
+
+    <div className="catalog-header">
+      <h1 className="catalog-title">Catá<span>logo</span></h1>
+    </div>
+
+    <div className="filter-bar">
+      <select className="filter-select" value={genero} onChange={(e) => setGenero(e.target.value)}>
+        <option value="">Todos los géneros</option>
         <option value="Pop">Pop</option>
         <option value="Rock">Rock</option>
       </select>
-      <select value={artista} onChange={(e) => setArtista(e.target.value)}>
-        <option value="">All artists</option>
+      <select className="filter-select" value={artista} onChange={(e) => setArtista(e.target.value)}>
+        <option value="">Todos los artistas</option>
         <option value="Michael Jackson">Michael Jackson</option>
         <option value="AC/DC">AC/DC</option>
         <option value="Fleetwood Mac">Fleetwood Mac</option>
       </select>
-      <select value={formato} onChange={(e) => setFormato(e.target.value)}>
-        <option value="">All formats</option>
+      <select className="filter-select" value={formato} onChange={(e) => setFormato(e.target.value)}>
+        <option value="">Todos los formatos</option>
         <option value="Vinilo">Vinilo</option>
         <option value="CD">CD</option>
         <option value="Cassette">Cassette</option>
       </select>
-      {filteredAlbums.length === 0 && <p>No results found</p>}
-      <div className="album-grid">
-        {filteredAlbums.map(album => (
-          <Link key={album.id} to={`/albumes/${album.id}`}>
-            <AlbumCard
-              title={album.title}
-              artist={album.artist}
-              genre={album.genre}
-              format_type={album.format_type}
-              price={album.price}
-              stock={album.stock}
-              year={album.year}
-              image_url={album.image_url}
-            />
-          </Link>
-        ))}
-      </div>
+      <span className="results-count">{filteredAlbums.length} resultado{filteredAlbums.length !== 1 ? 's' : ''}</span>
     </div>
-  )
+
+    {filteredAlbums.length === 0 && <p className="no-results">No se encontraron resultados</p>}
+
+    <div className="album-grid">
+      {filteredAlbums.map(album => (
+        <Link key={album.id} to={`/albumes/${album.id}`}>
+          <AlbumCard
+            title={album.title}
+            artist={album.artist}
+            genre={album.genre}
+            format_type={album.format_type}
+            price={album.price}
+            stock={album.stock}
+            year={album.year}
+            image_url={album.image_url}
+          />
+        </Link>
+      ))}
+    </div>
+  </div>
+)
 }
 
 export default Catalog

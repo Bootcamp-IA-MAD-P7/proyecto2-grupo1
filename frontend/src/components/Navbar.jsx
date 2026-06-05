@@ -19,11 +19,13 @@ function Navbar() {
         <img src={logoImg} alt="Musvintage" />
       </Link>
       <input
-        type="text"
-        placeholder="Buscar álbum..."
+      className="nav-search"
+      type="text"
+      placeholder="Buscar álbum..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <div className="nav-links">
       {rol === 'admin' && <Link to="/admin">Panel Admin</Link>}
       {token ? (
         <>
@@ -36,6 +38,7 @@ function Navbar() {
           <Link to="/register">Registro</Link>
         </>
       )}
+      </div>
     </nav>
   )
 }

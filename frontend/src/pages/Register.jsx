@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link  } from 'react-router-dom'
 import { register } from '../services/api'
 
 function Register() {
@@ -20,30 +20,36 @@ function Register() {
   }
 
   return (
-    <div>
-      <h1>Registro</h1>
-      {error && <p>{error}</p>}
+  <div className="form-page">
+    <div className="form-box">
+      <h1 className="form-title">Crear <span>cuenta</span></h1>
+      {error && <p className="form-error">{error}</p>}
       <input
+        className="form-input"
         type="text"
         placeholder="Nombre"
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
       />
       <input
+        className="form-input"
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
+        className="form-input"
         type="password"
         placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleRegister}>Registrarse</button>
+      <button className="form-btn" onClick={handleRegister}>Registrarse</button>
+      <p className="form-link">¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link></p>
     </div>
-  )
+  </div>
+)
 }
 
 export default Register
