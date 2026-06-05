@@ -27,27 +27,6 @@ FastAPI genera automáticamente una interfaz gráfica interactiva para testear y
 * 📍 **Swagger UI:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 * 📍 **ReDoc:** [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
----
-
-## 📐 Arquitectura y Estructura del Código
-
-El backend sigue un diseño modular y desacoplado por responsabilidades:
-
-```text
-├── ⚙️ config/
-│   └── config_variables.py   # Inicializa la clase Settings (procesa el entorno vía python-dotenv).
-├── 🗄️ database/
-│   └── database.py           # Conexión SQLAlchemy (create_engine), get_db() y pooling de producción.
-├── 📂 routes/
-│   └── routes.py             # Define las rutas principales bajo el prefijo /api/v1.
-├── 📐 schemas/
-│   └── ...                   # Validaciones Pydantic (AlbumResponse, AlbumCreate, ArtistResponse, etc.).
-├── 🎮 controllers/
-│   └── ...                   # Lógica de negocio (AlbumControllers, ArtistControllers, etc.).
-├── 🧰 utils/
-│   └── startup_checks.py     # verify_connection() e initialize_database() (seeding automático).
-└── 🚀 main.py                # Punto de entrada. Inicializa FastAPI, CORS y middlewares.
-
 ## 🛠️ Especificaciones Tecnológicas y Capacidades
 El stack tecnológico ha sido seleccionado estratégicamente para ofrecer un balance ideal entre velocidad de desarrollo y rendimiento en producción:
 
@@ -84,3 +63,25 @@ Pooling de Conexiones Dinámico: El sistema detecta el entorno operativo de form
 Seguridad Perimetral: Aislamiento de secretos de infraestructura (claves criptográficas, credenciales de BD) mediante inyección de entorno externa, soporte nativo para políticas de origen cruzado (CORS) restringidas y diseño preparado para la inyección de middleware de autenticación (JWT/OAuth2) mediante el módulo auth.py.
 
 Ciclo de Vida Automatizado: Gestión nativa de eventos de inicio y parada (startup/shutdown), garantizando una inicialización controlada de esquemas y un cierre limpio e inyectable de las sesiones de base de datos a través de get_db().
+
+---
+
+## 📐 Arquitectura y Estructura del Código
+
+El backend sigue un diseño modular y desacoplado por responsabilidades:
+
+```text
+├── ⚙️ config/
+│   └── config_variables.py   # Inicializa la clase Settings (procesa el entorno vía python-dotenv).
+├── 🗄️ database/
+│   └── database.py           # Conexión SQLAlchemy (create_engine), get_db() y pooling de producción.
+├── 📂 routes/
+│   └── routes.py             # Define las rutas principales bajo el prefijo /api/v1.
+├── 📐 schemas/
+│   └── ...                   # Validaciones Pydantic (AlbumResponse, AlbumCreate, ArtistResponse, etc.).
+├── 🎮 controllers/
+│   └── ...                   # Lógica de negocio (AlbumControllers, ArtistControllers, etc.).
+├── 🧰 utils/
+│   └── startup_checks.py     # verify_connection() e initialize_database() (seeding automático).
+└── 🚀 main.py                # Punto de entrada. Inicializa FastAPI, CORS y middlewares.
+
