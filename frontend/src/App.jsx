@@ -5,6 +5,7 @@ import DetalleAlbum from './pages/DetalleAlbum'
 import FormAlbum from './pages/FormAlbum'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="admin/albumes/nuevo" element={<FormAlbum />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="admin" element={<Admin />} />
       </Route>
     </Routes>
   )
