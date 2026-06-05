@@ -1,117 +1,87 @@
 # 🚀 Musintage Backend — FastAPI
 
-<p align="center">
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white" alt="FastAPI">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/SQLAlchemy-D71F1F?style=for-the-badge&logo=SQLAlchemy&logoColor=white" alt="SQLAlchemy">
-</p>
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F27?style=for-the-badge&logo=python&logoColor=white)](https://www.sqlalchemy.org/)
+[![Database](https://img.shields.io/badge/MySQL%20%2F%20PostgreSQL-4479A1?style=for-the-badge&logo=database)](https://github.com/)
 
-Este directorio contiene el núcleo de la API para el proyecto **Musintage**, desarrollado utilizando **FastAPI** y **Python**. El sistema gestiona de forma centralizada la lógica de e-commerce de música (usuarios, álbumes, carritos, categorías y pedidos) utilizando **MySQL** como motor de persistencia y **SQLAlchemy** como ORM.
+Este directorio contiene el núcleo de la API para el proyecto **Musintage**, desarrollado utilizando **FastAPI** y **Python**. El sistema gestiona de forma centralizada la lógica de e-commerce de música (usuarios, álbumes, carritos, categorías y pedidos). Usa **SQLAlchemy** como ORM y soporta la conexión nativa a MySQL o PostgreSQL según la configuración de la variable `DATABASE_URL`.
 
 ---
 
-## 🛠️ Requisitos Previos
+## 🛠️ Tecnologías Utilizadas
 
-Antes de desplegar el backend en tu entorno local, asegúrate de contar con:
-* 🐍 **Python 3.10+**
-* 🐬 Servidor local **MySQL** *(activo mediante XAMPP, Workbench o Docker)*
-* 📦 Gestor de paquetes `pip`
+* **Lenguaje:** 🐍 Python 3.10+
+* **Bases de Datos:** 🐬 MySQL / PostgreSQL (Dinámico mediante `DATABASE_URL`)
+* **Gestor de paquetes:** 📦 pip
+* **Framework principal:** ⚡ FastAPI, Uvicorn, Pydantic
+* **ORM:** 🗄️ SQLAlchemy
+* **Testing:** 🧪 Pytest
 
 ---
 
-## 📦 Instalación y Configuración
+## 📁 Documentación Interactiva (Swagger UI)
 
-Sigue estos pasos ordenados en tu terminal para inicializar el entorno de desarrollo de forma limpia:
+FastAPI genera automáticamente una interfaz gráfica interactiva para testear y revisar todos los endpoints en tiempo real una vez que el servidor está corriendo:
 
-### 1️⃣ Entrar a la carpeta del backend
-```bash
-cd backend
-```
+* 📍 **Swagger UI:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+* 📍 **ReDoc:** [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
-2️⃣ Crear y activar el entorno virtual (.venv)
-En entornos Windows (usando Git Bash / Terminal de VS Code):
-```
-python -m venv .venv
-source .venv/Scripts/activate
-```
-3️⃣ Instalar las dependencias del proyecto
-Instala todos los paquetes requeridos mapeados en el archivo requirements.txt:
-```
-pip install -r requirements.txt
-```
-4️⃣ Configurar las Variables de Enorno
-Crea un archivo llamado .env en la raíz de la carpeta backend/ para mapear las credenciales locales.
+## 🛠️ Especificaciones Tecnológicas y Capacidades
+El stack tecnológico ha sido seleccionado estratégicamente para ofrecer un balance ideal entre velocidad de desarrollo y rendimiento en producción:
 
->  **⚠️ IMPORTANTE** El archivo .env real contiene credenciales privadas. Está configurado de forma estricta en el .gitignore y nunca debe ser subido al repositorio público de GitHub.
+Core Engine: FastAPI ⚡ sobre Python 3.10+, aprovechando la validación asíncrona nativa y el tipado estricto para reducir errores en tiempo de ejecución.
 
-Utiliza la siguiente estructura limpia como plantilla:
-```
-DB_USER=tu_usuario_mysql
-DB_PASSWORD=tu_contraseña_mysql
-DB_HOST=127.0.0.1
-DB_NAME=musintage
-```
-### ⚡ Ejecución del Servidor y Base de Datos
-El archivo principal main.py incluye una rutina automatizada que genera de forma automática las tablas en tu base de datos local al inicializar la aplicación por primera vez mediante la instrucción database.Base.metadata.create_all.
+Capa de Persistencia: SQLAlchemy ORM 🗄️ integrado con el driver mysql+pymysql. Actúa como una capa de abstracción agnóstica que permite la conmutación nativa entre MySQL y PostgreSQL según las necesidades de infraestructura a través de variables de entorno.
 
-Para encender el servidor de desarrollo en tiempo real con recarga automática (live-reload), ejecuta:
-```
-uvicorn main:app --reload
-```
-El servicio se desplegará de forma local en:
-> 🔗 http://127.0.0.1:8000
+Validación y DTOs: Pydantic 📐, garantizando que cualquier entrada o salida de datos cumpla rigurosamente con los esquemas definidos, incluyendo validaciones complejas de tipos y correos electrónicos (EmailStr).
 
-### 📂 Documentación Interactiva (Swagger UI)
-FastAPI genera automáticamente una interfaz gráfica interactiva para testear y revisar todos los endpoints en tiempo real. Puedes acceder desde el navegador en:
+Calidad de Software: Suite de pruebas automatizadas integrada con Pytest 🧪 para la verificación de endpoints y lógica de negocio.
 
-### 🗺️ Swagger UI: http://127.0.0.1:8000/docs
+## 🌐 Ecosistema de Servicios y Endpoints
+La API expone una interfaz REST estructurada y predecible para interactuar con el dominio de Musintage.
 
-Método,Endpoint,Descripción,Payload (Ejemplo de Entrada)
-GET,/,Mensaje de bienvenida oficial,Ninguno
-POST,/album,Registro y validación de un nuevo álbum,Ver JSON abajo
+## 📋 Gestión del Sistema y Control de Estado
+Ciclo de Vida e Inicialización: El archivo principal main.py incluye una rutina automatizada que genera las tablas en la base de datos local al inicializar la aplicación mediante la instrucción database.Base.metadata.create_all.
 
-Ejemplo de estructura para POST /album
-```
-JSON 
+Monitoreo de Infraestructura: Endpoint de salud (GET /health) que ejecuta consultas de control de conexión directa (SELECT 1) contra la base de datos para asegurar la disponibilidad del servicio.
 
-{
-  "title": "Abbey Road",
-  "artist": "The Beatles",
-  "genre": "Rock",
-  "price": 29.99,
-  "stock": 15,
-  "year": 1969,
-  "format": "Vinyl",
-  "image_url": "[http://example.com/abbeyroad.jpg](http://example.com/abbeyroad.jpg)",
-  "category_id": 1
-}
-```
-### 📁 Arquitectura y Estructura del Código
-El backend sigue un diseño arquitectónico modular estructurado por responsabilidades lógicas:
+Sincronización de Datos Iniciales: Mecanismo de inicialización automatizada (AUTO_SEED) o manual (POST /seed-database) para el aprovisionamiento controlado de datos de prueba en entornos de desarrollo.
 
-### ⚙️ config/
+## 📁 Documentación Interactiva (Swagger UI)
+El framework genera automáticamente una interfaz gráfica interactiva para testear y revisar todos los endpoints en tiempo real.
 
-config_variables.py: Inicializa la clase Settings encargada de procesar el entorno mediante python-dotenv.
+🗺️ Swagger UI: http://127.0.0.1:8000/docs
 
-### 🗄️ database/
+📍 ReDoc: http://127.0.0.1:8000/redoc
 
-database.py: Implementa la conexión mediante el driver mysql+pymysql, levanta el motor de SQLAlchemy (create_engine) y expone la función inyectable get_db() para el manejo limpio del ciclo de vida de las sesiones.
+🔒 Robustez y Operaciones en Producción
+El backend está diseñado bajo estándares modernos de resiliencia y seguridad:
 
-### 📐 schemas/ (Modelos de validación estructural basados en Pydantic)
+Pooling de Conexiones Dinámico: El sistema detecta el entorno operativo de forma autónoma. En producción (ENVIRONMENT=production), conmuta automáticamente hacia un esquema de QueuePool ajustando los parámetros de tamaño de pool (pool_size) y desbordamiento máximo (max_overflow) para soportar alta concurrencia. En desarrollo, prioriza el modo depuración (echo=True).
 
-album_schema.py / album.py: Validaciones completas para creación, edición y respuestas de álbumes (títulos, artistas, precios y stock).
+Seguridad Perimetral: Aislamiento de secretos de infraestructura (claves criptográficas, credenciales de BD) mediante inyección de entorno externa, soporte nativo para políticas de origen cruzado (CORS) restringidas y diseño preparado para la inyección de middleware de autenticación (JWT/OAuth2) mediante el módulo auth.py.
 
-* **auth.py:** Modelos para el inicio de sesión y gestión de tokens de seguridad.
+Ciclo de Vida Automatizado: Gestión nativa de eventos de inicio y parada (startup/shutdown), garantizando una inicialización controlada de esquemas y un cierre limpio e inyectable de las sesiones de base de datos a través de get_db().
 
-* **cart.py:** Estructura para el flujo de ítems dentro de los carritos de compra.
+---
 
-* **category.py:** Modelos base y respuestas para la catalogación estricta de productos.
+## 📐 Arquitectura y Estructura del Código
 
-* **order.py:** Esquemas para el procesamiento de pedidos de clientes.
+El backend sigue un diseño modular y desacoplado por responsabilidades:
 
-* **user.py:** Validaciones de perfiles de usuario (UserCreate, UserUpdate) utilizando EmailStr.
+```text
+├── ⚙️ config/
+│   └── config_variables.py   # Inicializa la clase Settings (procesa el entorno vía python-dotenv).
+├── 🗄️ database/
+│   └── database.py           # Conexión SQLAlchemy (create_engine), get_db() y pooling de producción.
+├── 📂 routes/
+│   └── routes.py             # Define las rutas principales bajo el prefijo /api/v1.
+├── 📐 schemas/
+│   └── ...                   # Validaciones Pydantic (AlbumResponse, AlbumCreate, ArtistResponse, etc.).
+├── 🎮 controllers/
+│   └── ...                   # Lógica de negocio (AlbumControllers, ArtistControllers, etc.).
+├── 🧰 utils/
+│   └── startup_checks.py     # verify_connection() e initialize_database() (seeding automático).
+└── 🚀 main.py                # Punto de entrada. Inicializa FastAPI, CORS y middlewares.
 
-### 🚀 main.py
-
-Punto de entrada de la aplicación. Inicializa la app de FastAPI, levanta los metadatos de las tablas en MySQL y expone las rutas principales.
