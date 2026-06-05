@@ -16,7 +16,7 @@ class Album(Base):
     price = Column(Numeric(10, 2), nullable=False, default=0.0)
     stock = Column(Integer, nullable=False, default=0)
     year = Column(Integer, nullable=True)
-    image_url = Column(Text(500), nullable=True)
+    image_url = Column(Text, nullable=True)
     
     # Relaciones
     artist = relationship("Artist", back_populates="albums")
