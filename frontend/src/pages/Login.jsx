@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { login as loginApi } from '../services/api'
 
@@ -21,24 +21,29 @@ function Login() {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
-      {error && <p>{error}</p>}
+  <div className="form-page">
+    <div className="form-box">
+      <h1 className="form-title">Iniciar <span>sesión</span></h1>
+      {error && <p className="form-error">{error}</p>}
       <input
+        className="form-input"
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
+        className="form-input"
         type="password"
         placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Entrar</button>
+      <button className="form-btn" onClick={handleLogin}>Entrar</button>
+      <p className="form-link">¿No tienes cuenta? <Link to="/register">Regístrate</Link></p>
     </div>
-  )
+  </div>
+)
 }
 
 export default Login

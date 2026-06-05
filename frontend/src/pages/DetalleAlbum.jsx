@@ -28,21 +28,24 @@ function DetalleAlbum() {
     cargarAlbum()
   }, [id])
 
-  if (loading) return <p>Cargando...</p>
-  if (!album) return <p>Álbum no encontrado</p>
+if (loading) return <p className="loading">Cargando...</p>
+if (!album) return <p className="loading">Álbum no encontrado</p>
 
-  return (
-    <div>
-      <img src={album.image_url} alt={album.title} width="200" />
-      <h1>{album.title}</h1>
-      <p>{album.artist.name}</p>
-      <p>{album.genre.name}</p>
-      <p>{album.format_type.name}</p>
-      <p>{album.year}</p>
-      <p>{album.price} €</p>
-      <p>Stock: {album.stock}</p>
+return (
+  <div className="detalle">
+    <div className="detalle-cover">
+      <img src={album.image_url} alt={album.title} />
     </div>
-  )
+    <div className="detalle-info">
+      <span className="detalle-format">{album.format_type.name}</span>
+      <h1 className="detalle-title">{album.title}</h1>si
+      <p className="detalle-artist">{album.artist.name}</p>
+      <p className="detalle-price">{album.price} €</p>
+      <p className="detalle-meta">{album.genre.name} · {album.year}</p>
+      <p className="detalle-meta">Stock: {album.stock}</p>
+    </div>
+  </div>
+)
 }
 
 export default DetalleAlbum
