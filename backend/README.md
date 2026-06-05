@@ -48,7 +48,7 @@ El backend sigue un diseño modular y desacoplado por responsabilidades:
 │   └── startup_checks.py     # verify_connection() e initialize_database() (seeding automático).
 └── 🚀 main.py                # Punto de entrada. Inicializa FastAPI, CORS y middlewares.
 
-🛠️ Especificaciones Tecnológicas y Capacidades
+## 🛠️ Especificaciones Tecnológicas y Capacidades
 El stack tecnológico ha sido seleccionado estratégicamente para ofrecer un balance ideal entre velocidad de desarrollo y rendimiento en producción:
 
 Core Engine: FastAPI ⚡ sobre Python 3.10+, aprovechando la validación asíncrona nativa y el tipado estricto para reducir errores en tiempo de ejecución.
@@ -59,17 +59,17 @@ Validación y DTOs: Pydantic 📐, garantizando que cualquier entrada o salida d
 
 Calidad de Software: Suite de pruebas automatizadas integrada con Pytest 🧪 para la verificación de endpoints y lógica de negocio.
 
-🌐 Ecosistema de Servicios y Endpoints
+## 🌐 Ecosistema de Servicios y Endpoints
 La API expone una interfaz REST estructurada y predecible para interactuar con el dominio de Musintage.
 
-📋 Gestión del Sistema y Control de Estado
+## 📋 Gestión del Sistema y Control de Estado
 Ciclo de Vida e Inicialización: El archivo principal main.py incluye una rutina automatizada que genera las tablas en la base de datos local al inicializar la aplicación mediante la instrucción database.Base.metadata.create_all.
 
 Monitoreo de Infraestructura: Endpoint de salud (GET /health) que ejecuta consultas de control de conexión directa (SELECT 1) contra la base de datos para asegurar la disponibilidad del servicio.
 
 Sincronización de Datos Iniciales: Mecanismo de inicialización automatizada (AUTO_SEED) o manual (POST /seed-database) para el aprovisionamiento controlado de datos de prueba en entornos de desarrollo.
 
-📁 Documentación Interactiva (Swagger UI)
+## 📁 Documentación Interactiva (Swagger UI)
 El framework genera automáticamente una interfaz gráfica interactiva para testear y revisar todos los endpoints en tiempo real.
 
 🗺️ Swagger UI: http://127.0.0.1:8000/docs
